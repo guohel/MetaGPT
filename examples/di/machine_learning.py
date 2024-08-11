@@ -9,11 +9,14 @@ DATA_DIR = "path/to/your/data"
 SALES_FORECAST_REQ = f"""Train a model to predict sales for each department in every store (split the last 40 weeks records as validation dataset, the others is train dataset), include plot total sales trends, print metric and plot scatter plots of
 groud truth and predictions on validation data. Dataset is {DATA_DIR}/train.csv, the metric is weighted mean absolute error (WMAE) for test data. Notice: *print* key variables to get more information for next task step.
 """
+# TTA数据分析
+TTA_DATA_DIR = '/home/gee/repos/MetaGPT/Commonality.csv'
+TA_DATA_REQ = f"""根据给出的csv文件数据，分析出NG产品的关联的原因,，用文字表达出来。这是csv数据文件路径 {TTA_DATA_DIR}"""
 
-REQUIREMENTS = {"wine": WINE_REQ, "sales_forecast": SALES_FORECAST_REQ}
+REQUIREMENTS = {"wine": WINE_REQ, "sales_forecast": SALES_FORECAST_REQ, "tta": TA_DATA_REQ}
 
 
-async def main(use_case: str = "wine"):
+async def main(use_case: str = "tta"):
     mi = DataInterpreter()
     requirement = REQUIREMENTS[use_case]
     await mi.run(requirement)
