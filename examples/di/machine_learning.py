@@ -11,7 +11,8 @@ groud truth and predictions on validation data. Dataset is {DATA_DIR}/train.csv,
 """
 # TTA数据分析
 TTA_DATA_DIR = '/home/gee/repos/MetaGPT/Commonality.csv'
-TA_DATA_REQ = f"""根据给出的csv文件数据，分析出NG产品的关联的原因,，用文字表达出来。这是csv数据文件路径 {TTA_DATA_DIR}"""
+# TA_DATA_REQ = f"""根据给出的csv文件数据，分析出NG产品的关联Process的原因,每个步骤的图表都要显示出来且不能覆盖，最终结论用文字表达出来，NG关联原因的结论要包含数据。这是csv数据文件路径 {TTA_DATA_DIR}"""
+TA_DATA_REQ = f"""根据给出的csv文件数据，分析出NG产品的关联Process的原因,每个步骤的图表都要显示出来，最终结论NG关联原因的结论要包含数据。这是csv数据文件路径 {TTA_DATA_DIR}"""
 
 REQUIREMENTS = {"wine": WINE_REQ, "sales_forecast": SALES_FORECAST_REQ, "tta": TA_DATA_REQ}
 
